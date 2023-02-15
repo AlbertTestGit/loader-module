@@ -14,9 +14,11 @@ async function upload() {
             body: formData,
         });
         const result = await response.json();
-        console.log('Успех:', JSON.stringify(result));
+        console.log(JSON.stringify(result));
+        alert('Успех!')
     } catch (error) {
-        console.error('Ошибка:', error);
+        console.error(error);
+        alert('Ошибка!')
     }
 }
 
