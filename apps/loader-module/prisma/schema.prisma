@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Object {
+  id        Int      @id @default(autoincrement())
+  Date      DateTime?
+  Object    String?
+  Horizons  String?
+  Segment   String?
+  Region    String?
+  FluidType String?
+  Category  String?
+  Cultural  String?
+}
+
+model Well {
+  id              Int      @id @default(autoincrement())
+  Name            String?
+  Allias          String?
+  Object          String?
+  WHEADX          Float?
+  WHEADY          Float?
+  WHEADKB         Float?
+  FirstDateObject DateTime?
+  DRILLCOST       Decimal?
+}
